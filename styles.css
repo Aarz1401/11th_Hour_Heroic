@@ -1,0 +1,25 @@
+/* ------------------------------
+Code for general properties
+--------------------------------- */
+
+/* ------------------------------
+Code for introduction section
+--------------------------------- */
+.introduction{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    background-color: #170f0f;
+    background-position: center;
+    position: relative;
+    z-index: -1;
+}
+
+.mainHeading{
+    color:#fff;
+}
