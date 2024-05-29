@@ -49,7 +49,7 @@ Swiper Button Properties
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
+    /*height: 100%;*/
 }
 
 .swiper-slide img {
@@ -61,32 +61,55 @@ Swiper Button Properties
     border-radius: 20px;
 }
 
+.choice-button {
+    padding: 20px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    margin: 10px 0; /* Add margin between buttons */
+    text-align:center
+}
+
 .choice-button1 {
     position: absolute;
     bottom: 20px;
-    left: 50%;
     transform: translateX(-100%);
     padding: 10px 20px;
-    background-color: #ffffff;
+    background-color: #0a0101;
+    color:white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
     margin: 5px;
+    height: 50px;
+    width:70px;
+    transform:translateX(230%);
 }
 .choice-button2 {
     position: absolute;
     bottom: 20px;
-    left: 50%;
-    transform: translateX(0%);
+    transform: translateX(-230%);
     padding: 10px 20px;
-    background-color: #ffffff;
+    background-color: #0c0000;
+    color:white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
     margin: 5px;
+    height:50px;
+    width:70px;
 }
+
+
+
+.choice-button:hover {
+    background-color: #412929;
+}
+
 
 
 *, ::after{
@@ -96,3 +119,38 @@ Swiper Button Properties
 .timeline1, .timeline2 {
     display: flex;
 }
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.content-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 20px; /* Adds space between the image and the buttons */
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the buttons horizontally */
+}
+
+#home-button {
+    padding: 10px 20px;
+    background-color: #0a0101;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 10px auto;
+    display: none;
+    align-self: center;
+}
+
+

@@ -14,6 +14,9 @@
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide" data-id="start">
+                    <img src="panels/title.jpg" alt="">
+                </div>
+                <div class="swiper-slide" >
                     <img src="panels/panel 1 and 7.jpg" alt="">
                 </div>
                 <div class="swiper-slide">
@@ -26,13 +29,18 @@
                     <img src="panels/panel4.jpg" alt="">
                 </div>
                 <div class="swiper-slide" data-id="choice">
-                    <img src="panels/panel5.jpg" alt="">
-                    <button class="choice-button1 choice-button" data-target="timeline1">Choice 1</button>
-                    <button class="choice-button2 choice-button" data-target="timeline2">Choice 2</button>
+                    <div class="content-container" style="display: flex; flex-direction: column; align-items: center;">
+                        <img src="panels/panel5.jpg" alt="">
+                        <div class="button-container">
+                            <button class="choice-button1 choice-button" data-target="timeline1">Without Examples</button>
+                            <button class="choice-button2 choice-button" data-target="timeline2">Detailed Examples</button>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
+            <button id = "home-button">Return to Home</button>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

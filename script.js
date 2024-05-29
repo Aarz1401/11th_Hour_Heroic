@@ -69,17 +69,47 @@ function checkPagination(swiper) {
     const currentSlide = swiper.slides[currentIndex];
     const prevButton = document.querySelector('.swiper-button-prev');
     const nextButton = document.querySelector('.swiper-button-next');
+    const homeButton = document.getElementById('home-button');
 
     if (currentSlide.getAttribute('data-id') === 'choice') {
         if (prevButton) prevButton.style.display = 'none';
         if (nextButton) nextButton.style.display = 'none';
+        if(homeButton) homeButton.style.display = 'none';
+        
     } else {
         if (prevButton) prevButton.style.display = 'block';
         if (nextButton) nextButton.style.display = 'block';
+        if(homeButton) homeButton.style.display = 'none';
     }
 
-    // Hide the prev button if it's the first slide
+    if (currentSlide.getAttribute('data-id') === 'timeline1_2') {
+        if (nextButton) nextButton.style.display = 'none';
+        if(prevButton) prevButton.style.display = 'block';
+        if(homeButton) homeButton.style.display = 'block';
+    }
+
+    if (currentSlide.getAttribute('data-id') === 'timeline2_2') {
+        if (nextButton) nextButton.style.display = 'none';
+        if(prevButton) prevButton.style.display = 'block';
+        if(homeButton) homeButton.style.display = 'block';
+    }
     if (currentIndex === 0) {
         if (prevButton) prevButton.style.display = 'none';
     }
+
+   
+     // Hide the prev button if it's the first slide
+     if (currentIndex === 0) {
+        if (prevButton) prevButton.style.display = 'none';
+    }
+    //Hide the next button if it's the last slide
+    if (currentIndex === swiper.slides.length - 1) {
+        if (nextButton) nextButton.style.display = 'none';
+    }
 }
+document.getElementById('home-button').addEventListener('click', function() {
+    mySwiper.slideTo(0, 0);
+});
+
+   
+
