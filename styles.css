@@ -1,26 +1,21 @@
 /* ------------------------------
 Code for general properties
 --------------------------------- */
-
-/* ------------------------------
-Code for introduction section
---------------------------------- */
-.mainContainer{
-    margin-top:70px;
+.mainContainer {
+    margin-top: 70px;
 }
 
-.mainHeading{
-    color:#170303;
-    padding:20px 20px;
+.mainHeading {
+    color: #170303;
+    padding: 20px 20px;
     text-align: center;
 }
-
-
 
 /*---------------------------
 Swiper Button Properties
 ----------------------------*/
-.mySwiper .swiper-button-next, .mySwiper .swiper-button-prev {
+.mySwiper .swiper-button-next,
+.mySwiper .swiper-button-prev {
     color: #fff;
     background-color: rgba(0, 0, 0, 0.5);
     /*border-radius: 50%;*/
@@ -28,13 +23,36 @@ Swiper Button Properties
     top: 50%;
     padding: 20px 30px;
     z-index: 10;
-    }
+}
+
+/* Default for small screens */
 .mySwiper .swiper-button-prev {
-        left: 180px;
+    left: 10%;
 }
 .mySwiper .swiper-button-next {
-    right: 180px;
+    right: 10%;
 }
+
+/* Medium screens */
+@media (min-width: 768px) {
+    .mySwiper .swiper-button-prev {
+        left: 100px;
+    }
+    .mySwiper .swiper-button-next {
+        right: 100px;
+    }
+}
+
+/* Large screens */
+@media (min-width: 1024px) {
+    .mySwiper .swiper-button-prev {
+        left: 180px;
+    }
+    .mySwiper .swiper-button-next {
+        right: 180px;
+    }
+}
+
 .swiper-slide {
     display: flex;
     justify-content: center;
@@ -60,50 +78,38 @@ Swiper Button Properties
     font-size: 1rem;
     transition: background-color 0.3s ease;
     margin: 10px 0; /* Add margin between buttons */
-    text-align:center
+    text-align: center;
 }
 
-.choice-button1 {
+.choice-button1,
+.choice-button2 {
     position: absolute;
     bottom: 20px;
-    transform: translateX(-100%);
     padding: 10px 20px;
     background-color: #0a0101;
-    color:white;
+    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
     margin: 5px;
     height: 50px;
-    width:70px;
-    transform:translateX(230%);
+    width: 70px;
 }
+
+.choice-button1 {
+    transform: translateX(230%);
+}
+
 .choice-button2 {
-    position: absolute;
-    bottom: 20px;
     transform: translateX(-230%);
-    padding: 10px 20px;
-    background-color: #0c0000;
-    color:white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    margin: 5px;
-    height:50px;
-    width:70px;
 }
-
-
 
 .choice-button:hover {
     background-color: #412929;
 }
 
-
-
-*, ::after{
+*, ::after {
     box-sizing: initial;
 }
 
@@ -143,6 +149,7 @@ Swiper Button Properties
     display: none;
     align-self: center;
 }
+
 /*Choice-text animation*/
 #choice-text {
     font-family: 'Arial', sans-serif;
@@ -192,6 +199,5 @@ Swiper Button Properties
                      0 0 70px rgba(255, 0, 0, 0.7);
     }
 }
-
 
 

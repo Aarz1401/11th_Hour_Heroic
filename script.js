@@ -52,9 +52,11 @@ var mySwiper = new Swiper('.mySwiper', {
     on: {
         init: function () {
             checkPagination(this);
+            playSlideAudio(this);
         },
         slideChange: function () {
             checkPagination(this);
+            playSlideAudio(this);
         }
     },
     simulateTouch: false,
@@ -119,24 +121,83 @@ document.getElementById('home-button').addEventListener('click', function() {
 
 function playSlideAudio(swiper) {
     const hum = document.getElementById('hum');
-    const specificAudioChoice = document.getElementById('specific-audio-choice');
+    const fail = document.getElementById('fail');
+    const yay = document.getElementById('yay');
+    const surprise = document.getElementById('surprise');
+    const motivation = document.getElementById('motivation');
+    const huh = document.getElementById('huh');
+    const heart_beat = document.getElementById('heart_beat');
+    const alarm = document.getElementById('alarm');
+    const sunrise = document.getElementById('sunrise');
+    const chatgpt = document.getElementById('chatgpt');
     
     // Pause all audio first
     hum.pause();
-    specificAudioChoice.pause();
+    fail.pause();
+    yay.pause();
+    surprise.pause();
+    motivation.pause();
+    huh.pause();
+    heart_beat.pause();
+    alarm.pause();
+    sunrise.pause();
+    chatgpt.pause();
 
     // Determine the specific audio for the current slide
     const currentIndex = swiper.realIndex;
     const currentSlide = swiper.slides[currentIndex];
     const dataId = currentSlide.getAttribute('data-id');
 
-    if(dataId === 'start'){
+    if(dataId === '1'){
         hum.currentTime = 0;
         hum.play();
     }
+    if(dataId === 'timeline2_2'){
+        fail.currentTime = 0;
+        fail.play();
+    }
+    if(dataId === 'timeline1_1'){
+        yay.currentTime = 0;
+        yay.play();
+    }
+    if(dataId === 'timeline1_2'){
+        hum.currentTime = 0;
+        hum.play();
+    }
+    if(dataId === 'timeline2_1'){
+        huh.currentTime = 0;
+        huh.play();
+    }
+    if(dataId === 'timeline2_2'){
+        fail.currentTime = 0;
+        fail.play();
+    }
+    if(dataId === '2'){
+        motivation.currentTime = 0;
+        motivation.play();
+    }
+    if(dataId === '3'){
+        alarm.currentTime = 0;
+        alarm.play();
+    }
+    if(dataId === '4'){
+        chatgpt.currentTime = 0;
+        chatgpt.play();
+    }
+    if(dataId==='choice'){
+        heart_beat.currentTime = 0;
+        heart_beat.play();
+    }
+    if(dataId==='start'){
+        sunrise.currentTime = 0;
+        sunrise.play();
+    }
 }
 
-
-
-   
+document.addEventListener('DOMContentLoaded', function() {
+    const sunrise = document.getElementById('sunrise');
+    sunrise.pause();
+    sunrise.currentTime = 0;
+    sunrise.play();
+});
 
