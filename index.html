@@ -10,11 +10,14 @@
 </head>
 <body>
     <div class="mainContainer">
-        <h1 class="mainHeading"></h1>
+        <div class ="mainHeadingWrapper" id="mainHeadingWrapper">
+        <h1 class="mainHeading"> 11th Hour Heroics</h1>
+        </div>
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
+                <button id="start-button">Start</button>
                 <div class="swiper-slide" data-id="start">
-                    <img src="panels/title.jpg" alt="">
+                    <img src="panels/title.jpg" alt="" id="first-slide-image">
                 </div>
                 <div class="swiper-slide" data-id="1" >
                     <img src="panels/panel 1 and 7.jpg" alt="">
@@ -58,7 +61,7 @@
             </audio>
             <audio id ="sunrise" src="audio/sunrise.mp3">
             </audio>
-            <audio id ="surprise" src="audio/surprise.mp3">
+            <audio id ="surprise" src="audio/surprise.mp3" autoplay>
             </audio>
             <audio id ="chatgpt" src="audio/chatgpt.mp3">
             </audio>

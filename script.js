@@ -201,3 +201,34 @@ document.addEventListener('DOMContentLoaded', function() {
     sunrise.play();
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const nextButton = document.querySelector('.swiper-button-next');
+    const prevButton = document.querySelector('.swiper-button-prev');
+    nextButton.style.pointerEvents = 'none'; // Disable pointer events to make the button unclickable
+    nextButton.style.opacity = '0.5'; // Reduce opacity to indicate disabled state
+    prevButton.style.pointerEvents = 'none';
+    prevButton.style.opacity = '0.5';
+
+    document.getElementById('start-button').addEventListener('click', function() {
+        document.getElementById('first-slide-image').style.filter = 'none'; // Remove blur from the first slide
+        document.getElementById('mainHeadingWrapper').style.display = 'none'; // Hide the main heading
+        this.style.display = 'none';
+
+        // Play the sunrise audio
+        const sunrise = document.getElementById('sunrise');
+        sunrise.currentTime = 0;
+        sunrise.play().catch((error) => {
+            // If playback fails, log the error
+            console.error("Audio playback failed:", error);
+        });
+
+        mySwiper.update();
+        mySwiper.slideTo(0, 0);
+
+        // Enable the next and prev buttons
+        nextButton.style.pointerEvents = 'auto';
+        nextButton.style.opacity = '1';
+        prevButton.style.pointerEvents = 'auto';
+        prevButton.style.opacity = '1';
+    });
+});

@@ -3,6 +3,7 @@ Code for general properties
 --------------------------------- */
 .mainContainer {
     margin-top: 70px;
+    
 }
 
 .mainHeading {
@@ -10,7 +11,10 @@ Code for general properties
     padding: 20px 20px;
     text-align: center;
 }
-
+body{
+    background:url(panels/simple_grid.jpeg);
+    background-size: auto;
+}
 /*---------------------------
 Swiper Button Properties
 ----------------------------*/
@@ -199,5 +203,80 @@ Swiper Button Properties
                      0 0 70px rgba(255, 0, 0, 0.7);
     }
 }
+
+#first-slide-image {
+    filter: blur(5px); /* Blur effect on the first slide image */
+}
+
+#start-button {
+    padding: 20px 40px;
+    background-color: #0a0101;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+
+
+
+.mainHeading {
+    text-align: center;
+    display: block;
+    padding: 20px 20px;
+    font-size: 3em;
+    animation: colorChange 5s linear infinite, scaleUp 5s ease-in-out infinite, backgroundMove 10s ease infinite;
+    background: linear-gradient(270deg, #ff0000, #00ff00, #0000ff, #ff00ff);
+    background-size: 800% 800%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.mainHeadingWrapper {
+    background-color: white;
+    padding: 20px;
+    display: block;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px; 
+}
+
+@keyframes backgroundMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes colorChange {
+    0% {
+        color: #ff0000;
+    }
+    50% {
+        color: #00ff00;
+    }
+    100% {
+        color: #ff0000;
+    }
+}
+
+@keyframes scaleUp {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+
 
 
