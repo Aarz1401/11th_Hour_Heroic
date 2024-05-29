@@ -152,5 +152,55 @@ Swiper Button Properties
     display: none;
     align-self: center;
 }
+/*Choice-text animation*/
+#choice-text {
+    font-family: 'Arial', sans-serif;
+    font-size: 2.5rem;
+    color: #000000;
+    text-align: center;
+    margin-top: 20px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7),
+                 0 0 20px rgba(255, 255, 255, 0.7),
+                 0 0 30px rgba(255, 0, 0, 0.7),
+                 0 0 40px rgba(255, 0, 0, 0.7),
+                 0 0 50px rgba(255, 0, 0, 0.7),
+                 0 0 60px rgba(255, 0, 0, 0.7),
+                 0 0 70px rgba(255, 0, 0, 0.7);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.7),
+                     0 0 20px rgba(255, 255, 255, 0.7),
+                     0 0 30px rgba(255, 0, 0, 0.7),
+                     0 0 40px rgba(255, 0, 0, 0.7),
+                     0 0 50px rgba(255, 0, 0, 0.7),
+                     0 0 60px rgba(255, 0, 0, 0.7),
+                     0 0 70px rgba(255, 0, 0, 0.7);
+    }
+    50% {
+        transform: scale(1.1);
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.7),
+                     0 0 30px rgba(255, 255, 255, 0.7),
+                     0 0 40px rgba(255, 0, 0, 0.7),
+                     0 0 50px rgba(255, 0, 0, 0.7),
+                     0 0 60px rgba(255, 0, 0, 0.7),
+                     0 0 70px rgba(255, 0, 0, 0.7),
+                     0 0 80px rgba(255, 0, 0, 0.7);
+    }
+    100% {
+        transform: scale(1);
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.7),
+                     0 0 20px rgba(255, 255, 255, 0.7),
+                     0 0 30px rgba(255, 0, 0, 0.7),
+                     0 0 40px rgba(255, 0, 0, 0.7),
+                     0 0 50px rgba(255, 0, 0, 0.7),
+                     0 0 60px rgba(255, 0, 0, 0.7),
+                     0 0 70px rgba(255, 0, 0, 0.7);
+    }
+}
+
 
 

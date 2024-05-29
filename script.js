@@ -69,29 +69,34 @@ function checkPagination(swiper) {
     const currentSlide = swiper.slides[currentIndex];
     const prevButton = document.querySelector('.swiper-button-prev');
     const nextButton = document.querySelector('.swiper-button-next');
+    const choiceText= document.getElementById('choice-text');
     const homeButton = document.getElementById('home-button');
 
     if (currentSlide.getAttribute('data-id') === 'choice') {
         if (prevButton) prevButton.style.display = 'none';
         if (nextButton) nextButton.style.display = 'none';
         if(homeButton) homeButton.style.display = 'none';
+        if(choiceText) choiceText.style.display = 'block';
         
     } else {
         if (prevButton) prevButton.style.display = 'block';
         if (nextButton) nextButton.style.display = 'block';
         if(homeButton) homeButton.style.display = 'none';
+        if(choiceText) choiceText.style.display = 'none';
     }
 
     if (currentSlide.getAttribute('data-id') === 'timeline1_2') {
         if (nextButton) nextButton.style.display = 'none';
         if(prevButton) prevButton.style.display = 'block';
         if(homeButton) homeButton.style.display = 'block';
+        if(choiceText) choiceText.style.display = 'none';
     }
 
     if (currentSlide.getAttribute('data-id') === 'timeline2_2') {
         if (nextButton) nextButton.style.display = 'none';
         if(prevButton) prevButton.style.display = 'block';
         if(homeButton) homeButton.style.display = 'block';
+        if(choiceText) choiceText.style.display = 'none';
     }
     if (currentIndex === 0) {
         if (prevButton) prevButton.style.display = 'none';
