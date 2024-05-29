@@ -278,5 +278,80 @@ Swiper Button Properties
 }
 
 
+/* Styles for screens 767px or smaller */
+@media (max-width: 767px) {
+    .mainContainer {
+        margin-top: 20px;
+    }
+
+    .mainHeading {
+        font-size: 2em;
+        padding: 10px 10px;
+    }
+
+    .mySwiper .swiper-button-next,
+    .mySwiper .swiper-button-prev {
+        padding: 10px 15px;
+    }
+
+    .swiper-slide img {
+        max-width: 100%;
+        max-height: 300px;
+    }
+
+    .choice-button {
+        font-size: 0.8rem;
+        padding: 10px 15px;
+        margin: 5px 0;
+    }
+
+    .choice-button1,
+    .choice-button2 {
+        width: 100px;
+        height: auto;
+        transform: translateX(0%);
+        position: static;
+    }
+
+    .content-container img {
+        margin-bottom: 10px;
+    }
+
+    #start-button {
+        font-size: 1rem;
+        padding: 15px 20px;
+    }
+
+    #home-button {
+        font-size: 1rem;
+        padding: 5px 10px;
+    }
+
+    #choice-text {
+        font-size: 1.5rem;
+    }
+}
+
+/* Styles for screens 768px and wider */
+@media (min-width: 768px) {
+    .mySwiper .swiper-button-prev {
+        left: 100px;
+    }
+
+    .mySwiper .swiper-button-next {
+        right: 100px;
+    }
+}
+
+/* Styles for screens 1024px and wider */
+@media (min-width: 1024px) {
+    .mySwiper .swiper-button-prev {
+        left: 180px;
+    }
+
+    .mySwiper .swiper-button-next {
+        right: 180px;
+    }
+}
 
 
