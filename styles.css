@@ -62,7 +62,7 @@ Swiper  Properties
 
 .swiper-slide img {
     max-width: 80%;
-    max-height: 500px;
+    max-height:650px;
     object-fit: contain;
     margin: auto;
     display: block;
@@ -99,11 +99,11 @@ Choice Button and Choice slide Properties
 }
 
 .choice-button1 {
-    transform: translateX(230%);
+    transform: translateX(315%);
 }
 
 .choice-button2 {
-    transform: translateX(-230%);
+    transform: translateX(-315%);
 }
 
 .choice-button:hover {
@@ -370,6 +370,51 @@ Responsive Styling Properties
     .mySwiper .swiper-button-next {
         right: 180px;
     }
+    .mainContainer{
+        margin-bottom:70px;
+    }
 }
 
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    font-size: 14px;
+    flex-wrap: wrap;
+}
 
+.footer-left {
+    flex: 1;
+    text-align: left;
+}
+
+.footer-right {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.footer-right a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-right a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-right {
+        justify-content: flex-start;
+        gap: 5px;
+    }
+}
