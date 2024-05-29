@@ -1,3 +1,42 @@
+//Aadil Chasmawala , May 2024
+//This is the main script file for the project. It contains all the logic for the interactive story.
+
+
+
+// Add event listener to the start button
+document.addEventListener('DOMContentLoaded', function() {
+    const nextButton = document.querySelector('.swiper-button-next');
+    const prevButton = document.querySelector('.swiper-button-prev');
+    nextButton.style.pointerEvents = 'none'; // Disable pointer events to make the button unclickable
+    nextButton.style.opacity = '0.5'; // Reduce opacity to indicate disabled state
+    prevButton.style.pointerEvents = 'none';
+    prevButton.style.opacity = '0.5';
+
+    document.getElementById('start-button').addEventListener('click', function() {
+        document.getElementById('first-slide-image').style.filter = 'none'; // Remove blur from the first slide
+        document.getElementById('mainHeadingWrapper').style.display = 'none'; // Hide the main heading
+        this.style.display = 'none';
+
+        // Play the sunrise audio
+        const sunrise = document.getElementById('sunrise');
+        sunrise.currentTime = 0;
+        sunrise.play().catch((error) => {
+            // If playback fails, log the error
+            console.error("Audio playback failed:", error);
+        });
+
+        mySwiper.update();
+        mySwiper.slideTo(0, 0);
+
+        // Enable the next and prev buttons
+        nextButton.style.pointerEvents = 'auto';
+        nextButton.style.opacity = '1';
+        prevButton.style.pointerEvents = 'auto';
+        prevButton.style.opacity = '1';
+    });
+});
+
+// Add event listeners to all choice buttons(here there are 2)
 document.querySelectorAll('.choice-button').forEach(button => {
     button.addEventListener('click', function() {
         const target = this.getAttribute('data-target');
@@ -5,43 +44,7 @@ document.querySelectorAll('.choice-button').forEach(button => {
     });
 });
 
-function updateTimeline(timeline) {
-    // Find the index of the choice slide
-    const choiceSlideIndex = Array.from(document.querySelectorAll('.swiper-slide')).findIndex(slide => slide.getAttribute('data-id') === 'choice');
-
-    // Remove all slides after the choice slide
-    const slides = document.querySelectorAll('.swiper-slide');
-    for (let i = slides.length - 1; i > choiceSlideIndex; i--) {
-        mySwiper.removeSlide(i);
-    }
-
-    // Define new slides for each timeline
-    const timeline1Slides = [
-        '<div class="swiper-slide" data-id="timeline1_1"><img src="panels/panel6.jpg" alt=""></div>',
-        '<div class="swiper-slide" data-id="timeline1_2"><img src="panels/panel 1 and 7.jpg" alt=""></div>'
-    ];
-
-    const timeline2Slides = [
-        '<div class="swiper-slide" data-id="timeline2_1"><img src="panels/panel6.2.jpg" alt=""></div>',
-        '<div class="swiper-slide" data-id="timeline2_2"><img src="panels/panel 7.jpg" alt=""></div>'
-    ];
-
-    // Add new slides based on the chosen timeline
-    if (timeline === 'timeline1') {
-        timeline1Slides.forEach(slide => {
-            mySwiper.appendSlide(slide);
-        });
-    } else if (timeline === 'timeline2') {
-        timeline2Slides.forEach(slide => {
-            mySwiper.appendSlide(slide);
-        });
-    }
-
-    // Navigate to the first slide of the new timeline
-    mySwiper.update();
-    mySwiper.slideTo(choiceSlideIndex + 1, 0);
-}
-
+// Initialize Swiper
 var mySwiper = new Swiper('.mySwiper', {
     direction: 'horizontal',
     loop: false,
@@ -66,6 +69,7 @@ var mySwiper = new Swiper('.mySwiper', {
     speed: 400,
 });
 
+// Function to check pagination based on the current slide
 function checkPagination(swiper) {
     const currentIndex = swiper.realIndex;
     const currentSlide = swiper.slides[currentIndex];
@@ -114,11 +118,54 @@ function checkPagination(swiper) {
         if (nextButton) nextButton.style.display = 'none';
     }
 }
+
+
+// Function to update the timeline based on the choice made by the user
+function updateTimeline(timeline) {
+    // Find the index of the choice slide
+    const choiceSlideIndex = Array.from(document.querySelectorAll('.swiper-slide')).findIndex(slide => slide.getAttribute('data-id') === 'choice');
+
+    // Remove all slides after the choice slide
+    const slides = document.querySelectorAll('.swiper-slide');
+    for (let i = slides.length - 1; i > choiceSlideIndex; i--) {
+        mySwiper.removeSlide(i);
+    }
+
+    // Define new slides for each timeline
+    const timeline1Slides = [
+        '<div class="swiper-slide" data-id="timeline1_1"><img src="panels/panel6.jpg" alt=""></div>',
+        '<div class="swiper-slide" data-id="timeline1_2"><img src="panels/panel 1 and 7.jpg" alt=""></div>'
+    ];
+
+    const timeline2Slides = [
+        '<div class="swiper-slide" data-id="timeline2_1"><img src="panels/panel6.2.jpg" alt=""></div>',
+        '<div class="swiper-slide" data-id="timeline2_2"><img src="panels/panel 7.jpg" alt=""></div>'
+    ];
+
+    // Add new slides based on the chosen timeline
+    if (timeline === 'timeline1') {
+        timeline1Slides.forEach(slide => {
+            mySwiper.appendSlide(slide);
+        });
+    } else if (timeline === 'timeline2') {
+        timeline2Slides.forEach(slide => {
+            mySwiper.appendSlide(slide);
+        });
+    }
+
+    // Navigate to the first slide of the new timeline
+    mySwiper.update();
+    mySwiper.slideTo(choiceSlideIndex + 1, 0);
+}
+
+
+// Add event listener to the home button
 document.getElementById('home-button').addEventListener('click', function() {
     mySwiper.slideTo(0, 0);
 });
 
 
+// Function to play audio based on the current slide
 function playSlideAudio(swiper) {
     const hum = document.getElementById('hum');
     const fail = document.getElementById('fail');
@@ -194,41 +241,4 @@ function playSlideAudio(swiper) {
     }
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    const sunrise = document.getElementById('sunrise');
-    sunrise.pause();
-    sunrise.currentTime = 0;
-    sunrise.play();
-});
 
-document.addEventListener('DOMContentLoaded', function() {
-    const nextButton = document.querySelector('.swiper-button-next');
-    const prevButton = document.querySelector('.swiper-button-prev');
-    nextButton.style.pointerEvents = 'none'; // Disable pointer events to make the button unclickable
-    nextButton.style.opacity = '0.5'; // Reduce opacity to indicate disabled state
-    prevButton.style.pointerEvents = 'none';
-    prevButton.style.opacity = '0.5';
-
-    document.getElementById('start-button').addEventListener('click', function() {
-        document.getElementById('first-slide-image').style.filter = 'none'; // Remove blur from the first slide
-        document.getElementById('mainHeadingWrapper').style.display = 'none'; // Hide the main heading
-        this.style.display = 'none';
-
-        // Play the sunrise audio
-        const sunrise = document.getElementById('sunrise');
-        sunrise.currentTime = 0;
-        sunrise.play().catch((error) => {
-            // If playback fails, log the error
-            console.error("Audio playback failed:", error);
-        });
-
-        mySwiper.update();
-        mySwiper.slideTo(0, 0);
-
-        // Enable the next and prev buttons
-        nextButton.style.pointerEvents = 'auto';
-        nextButton.style.opacity = '1';
-        prevButton.style.pointerEvents = 'auto';
-        prevButton.style.opacity = '1';
-    });
-});

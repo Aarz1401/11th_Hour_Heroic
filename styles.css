@@ -1,22 +1,17 @@
+/* Aadil Chasmawala May 2024 */
 /* ------------------------------
-Code for general properties
+Code for General Properties
 --------------------------------- */
 .mainContainer {
     margin-top: 70px;
     
-}
-
-.mainHeading {
-    color: #170303;
-    padding: 20px 20px;
-    text-align: center;
 }
 body{
     background:url(panels/simple_grid.jpeg);
     background-size: auto;
 }
 /*---------------------------
-Swiper Button Properties
+Swiper  Properties
 ----------------------------*/
 .mySwiper .swiper-button-next,
 .mySwiper .swiper-button-prev {
@@ -73,7 +68,9 @@ Swiper Button Properties
     display: block;
     border-radius: 20px;
 }
-
+/*---------------------------
+Choice Button and Choice slide Properties
+----------------------------*/
 .choice-button {
     padding: 20px 20px;
     border: none;
@@ -120,6 +117,10 @@ Swiper Button Properties
 .timeline1, .timeline2 {
     display: flex;
 }
+
+/*---------------------------
+Other Navigation Buttons Properties
+----------------------------*/
 
 .content-container {
     display: flex;
@@ -224,11 +225,15 @@ Swiper Button Properties
 }
 
 
-
+/*---------------------------
+Main Heading Properties
+----------------------------*/
 
 .mainHeading {
     text-align: center;
     display: block;
+    color: #170303;
+    text-align: center;
     padding: 20px 20px;
     font-size: 3em;
     animation: colorChange 5s linear infinite, scaleUp 5s ease-in-out infinite, backgroundMove 10s ease infinite;
@@ -239,22 +244,26 @@ Swiper Button Properties
 }
 
 .mainHeadingWrapper {
-    background-color: white;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
     padding: 20px;
-    display: block;
+    display: flex;
     align-items: center;
+    justify-content: center;
     text-align: center;
-    border-radius: 10px; 
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
 }
 
-@keyframes backgroundMove {
-    0% {
-        background-position: 0% 50%;
-    }
-    100% {
-        background-position: 100% 50%;
-    }
+.mainHeadingWrapper h1 {
+    position: relative;
+    z-index: 1;
+    color: #333;
+    font-size: 2em;
+    margin: 0;
 }
+
 
 @keyframes colorChange {
     0% {
@@ -277,7 +286,16 @@ Swiper Button Properties
     }
 }
 
+@keyframes backgroundMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 
+
+/*---------------------------
+Responsive Styling Properties
+----------------------------*/
 /* Styles for screens 767px or smaller */
 @media (max-width: 767px) {
     .mainContainer {
