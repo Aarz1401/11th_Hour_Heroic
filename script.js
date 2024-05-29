@@ -116,5 +116,25 @@ document.getElementById('home-button').addEventListener('click', function() {
     mySwiper.slideTo(0, 0);
 });
 
+
+function playSlideAudio(swiper) {
+    const hum = document.getElementById('hum');
+    const specificAudioChoice = document.getElementById('specific-audio-choice');
+    
+    // Pause all audio first
+    hum.pause();
+    specificAudioChoice.pause();
+
+    // Determine the specific audio for the current slide
+    const currentIndex = swiper.realIndex;
+    const currentSlide = swiper.slides[currentIndex];
+    const dataId = currentSlide.getAttribute('data-id');
+
+    if(dataId === 'start'){
+        hum.currentTime = 0;
+        hum.play();
+    }
+}
+
    
 
