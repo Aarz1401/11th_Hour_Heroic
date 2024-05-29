@@ -1,21 +1,41 @@
 <!DOCTYPE html>
-<!--Created By Aadil Chasmawala, May 2024-->
-<!--For Communications Lab Project 2 by Aadil Chasmawala, Aayat Azim, Nisa Shahid and Bismark Buernotey Buer-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>11th_Hour_Heroic</title>
-     <!--Linking CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap.min.css.map" rel="stylesheet">
-    <link href="styles.css" rel = "stylesheet">
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-    <div class = "introduction">
-        <h1 class ="mainHeading">11th Hour Heroic</h1>
-        <h2>A Comic Strip By Aadil Chasmawala, Aayat Azim, Nisa Shahid and Bismark Buernotey Buer</h2>
+    <div class="mainContainer">
+        <h1 class="mainHeading">11th Hour Heroic</h1>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" data-id="start">
+                    <img src="panels/panel 1 and 7.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="panels/panel2.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="panels/panel3.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="panels/panel4.jpg" alt="">
+                </div>
+                <div class="swiper-slide" data-id="choice">
+                    <img src="panels/panel5.jpg" alt="">
+                    <button class="choice-button1 choice-button" data-target="timeline1">Choice 1</button>
+                    <button class="choice-button2 choice-button" data-target="timeline2">Choice 2</button>
+                </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
