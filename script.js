@@ -11,10 +11,13 @@ document.addEventListener('DOMContentLoaded', function() {
     nextButton.style.opacity = '0.5'; // Reduce opacity to indicate disabled state
     prevButton.style.pointerEvents = 'none';
     prevButton.style.opacity = '0.5';
+    nextButton.style.display = 'none'; // Hide the next button
 
     document.getElementById('start-button').addEventListener('click', function() {
         document.getElementById('first-slide-image').style.filter = 'none'; // Remove blur from the first slide
         document.getElementById('mainHeadingWrapper').style.display = 'none'; // Hide the main heading
+        document.getElementById('swiper-button-next').style.display = 'block'; // show the nextButton
+
         this.style.display = 'none';
 
         // Play the sunrise audio
@@ -112,6 +115,7 @@ function checkPagination(swiper) {
      // Hide the prev button if it's the first slide
      if (currentIndex === 0) {
         if (prevButton) prevButton.style.display = 'none';
+        //if(nextButton) nextButton.style.display = 'none';
     }
     //Hide the next button if it's the last slide
     if (currentIndex === swiper.slides.length - 1) {
@@ -161,7 +165,10 @@ function updateTimeline(timeline) {
 
 // Add event listener to the home button
 document.getElementById('home-button').addEventListener('click', function() {
+    const nextButton = document.getElementById('swiper-button-next');
+    nextButton.style.display = 'block';
     mySwiper.slideTo(0, 0);
+
 });
 
 
